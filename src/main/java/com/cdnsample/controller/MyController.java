@@ -50,4 +50,15 @@ public class MyController {
 		response.setContentType(MediaType.IMAGE_PNG_VALUE);
 		IOUtils.copy(fis, response.getOutputStream());
 	}
+	@RequestMapping(value = "/image/india", method = RequestMethod.GET)
+	public void getImageAsByteArray(HttpServletResponse response) throws IOException {
+		BufferedImage image = null;
+		URL url = new URL("http://" + env.getProperty("CDN_CNAME") + "/Indian-flag-picture.png");
+		image = ImageIO.read(url);
+		ByteArrayOutputStream os = new ByteArrayOutputStream();
+		ImageIO.write(image, "png", os);
+		InputStream fis = new ByteArrayInputStream(os.toByteArray());
+		response.setContentType(MediaType.IMAGE_PNG_VALUE);
+		IOUtils.copy(fis, response.getOutputStream());
+	}
 }
