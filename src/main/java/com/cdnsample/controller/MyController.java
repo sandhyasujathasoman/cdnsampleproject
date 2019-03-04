@@ -40,7 +40,7 @@ public class MyController {
 	}
 
 	@RequestMapping(value = "/image", method = RequestMethod.GET)
-	public void getImageAsByteArray(HttpServletResponse response) throws IOException {
+	public void getImageUSAsByteArray(HttpServletResponse response) throws IOException {
 		BufferedImage image = null;
 		URL url = new URL("http://" + env.getProperty("CDN_CNAME_US") + "/Us-flag-picture.png");
 		image = ImageIO.read(url);
@@ -51,7 +51,7 @@ public class MyController {
 		IOUtils.copy(fis, response.getOutputStream());
 	}
 	@RequestMapping(value = "/image/india", method = RequestMethod.GET)
-	public void getImageAsByteArray(HttpServletResponse response) throws IOException {
+	public void getImageINDAsByteArray(HttpServletResponse response) throws IOException {
 		BufferedImage image = null;
 		URL url = new URL("http://" + env.getProperty("CDN_CNAME_IND") + "/Indian-flag-picture.png");
 		image = ImageIO.read(url);
