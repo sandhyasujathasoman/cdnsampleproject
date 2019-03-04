@@ -28,7 +28,7 @@ public class MyController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getIndexAsByteArray(HttpServletResponse response) throws IOException {
-		URL oracle = new URL("http://" + env.getProperty("CDN_CNAME") + "/index.html");
+		URL oracle = new URL("http://" + env.getProperty("CDN_CNAME_US") + "/index.html");
 		BufferedReader in = new BufferedReader(new InputStreamReader(oracle.openStream()));
 
 		String inputLine;
