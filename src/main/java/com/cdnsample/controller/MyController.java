@@ -54,8 +54,6 @@ public class MyController {
 	public void getImageINDAsByteArray(HttpServletResponse response) throws IOException {
 		BufferedImage image = null;
 		URL url = new URL("http://" + env.getProperty("CDN_CNAME_IND") + "/Indian-flag-picture");
-		System.out.println("#################...");
-		system.out.println(env.getProperty("CDN_CNAME_IND"));
 		image = ImageIO.read(url);
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		ImageIO.write(image, "png", os);
