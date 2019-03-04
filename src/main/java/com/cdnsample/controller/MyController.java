@@ -53,7 +53,7 @@ public class MyController {
 	@RequestMapping(value = "/india", method = RequestMethod.GET)
 	public void getImageINDAsByteArray(HttpServletResponse response) throws IOException {
 		BufferedImage image = null;
-		URL url = new URL("http://" + env.getProperty("CDN_CNAME_IND") + "/Indian-flag-picture");
+		URL url = new URL("http://d5kty0mtm7s3p.cloudfront.net/Indian-flag-picture.png");
 		image = ImageIO.read(url);
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		ImageIO.write(image, "png", os);
